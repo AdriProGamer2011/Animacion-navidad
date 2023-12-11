@@ -1,10 +1,14 @@
 
-   .container {
+  .container {
     position: absolute;
-    left: 620px;
-    top: 200px;
+    left: 900px;
+    top: 285px;
   }
  
+  body{
+    background-color:midnightblue;
+  }
+
   .arbol {
     position: absolute;
   }
@@ -12,7 +16,8 @@
   .estrella {
    z-index: 1;
    position: absolute;
-   left: -49px; top: -40px;
+   left:-49px; 
+   top:-49px;
    color: red;
    width: 0px;
    height: 0px;
@@ -22,7 +27,7 @@
    transform: rotate(35deg) scale(.2);
 }
 
-.estrella::before {
+.estrella:before {
   border-bottom: 80px solid #FFE066;
   border-left: 30px solid transparent;
   border-right: 30px solid transparent;
@@ -148,6 +153,20 @@
     transform: rotate(60deg);
     content: '';
   }
+  .luna{
+    position:relative;
+    margin:auto;
+    top:40px;
+    bottom:0;
+    left:550px;
+    right:0;
+    background-color:transparent;
+    height:150px;
+    width:150px;
+    border-radius:50%;
+    box-shadow:40px 10px 0 0 rgb(204, 204, 211);
+    transform: rotate(-25deg);
+  }
 
   .estrella {
     animation-name: rotacion-estrella;
@@ -156,6 +175,15 @@
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
   }
+
+  .luna {
+    animation-name: rotacion-luna;
+    animation-duration: 3000ms;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+  }
+
   
   
   @keyframes rotacion-estrella {
@@ -175,4 +203,23 @@
   100% {
   transform: rotate(360deg);
   }
+  }
+
+
+  @keyframes rotacion-luna {
+    0% {
+    transform: rotate(-25deg);
+    }
+    25% {
+    transform: rotate(50deg);
+    }
+    50% {
+    transform: rotate(-75deg);
+    }
+    75% {
+    transform: rotate(50deg);
+    }
+    100% {
+    transform: rotate(-25deg);
+    }
   }
